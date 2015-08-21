@@ -38,12 +38,12 @@
  * static const int xmppLogLevel = XMPP_LOG_LEVEL_INFO | XMPP_LOG_FLAG_TRACE;
  * 
  * Step 3:
- * Replace your NSLog statements with XMPPLog statements according to the severity of the message.
+ * Replace your PETERLog statements with XMPPLog statements according to the severity of the message.
  * 
- * NSLog(@"Fatal error, no dohickey found!"); -> XMPPLogError(@"Fatal error, no dohickey found!");
+ * PETERLog(@"Fatal error, no dohickey found!"); -> XMPPLogError(@"Fatal error, no dohickey found!");
  * 
- * XMPPLog has the same syntax as NSLog.
- * This means you can pass it multiple variables just like NSLog.
+ * XMPPLog has the same syntax as PETERLog.
+ * This means you can pass it multiple variables just like PETERLog.
  * 
  * You may optionally choose to define different log levels for debug and release builds.
  * You can do so like this:

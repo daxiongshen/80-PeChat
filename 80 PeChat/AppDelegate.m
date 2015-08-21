@@ -8,6 +8,12 @@
 
 #import "AppDelegate.h"
 #import "XMPPFramework.h"
+#import "PeNaviController.h"
+#import "PeUserInfo.h"
+#import "PeXmppTool.h"
+#import "DDLog.h"
+#import "DDTTYLogger.h"
+
 
 
 /*
@@ -21,15 +27,7 @@
  */
 
 
-@interface AppDelegate ()<XMPPStreamDelegate>
-{
-    XMPPStream *_xmppStream;
-}
-
--(void) setupXMPPStream;
--(void) connectToHost;
--(void) sendPwdToHost;
--(void) sendOnlineToHost;
+@interface AppDelegate ()
 
 
 @end
@@ -42,121 +40,27 @@
 #pragma  私有方法
 
 
-#pragma 初始化xmppstream
-- (void) setupXMPPStream
-{
-    _xmppStream = [[XMPPStream alloc]init];
-    
-    
-    
-    [_xmppStream addDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
-    
-    
-}
-- (void)sendPwdToHost
-
-{
-    
-    //从沙盒获取密码
-    
-    NSError *err = nil;
-    
-     NSString *pwd = [[NSUserDefaults standardUserDefaults]objectForKey:@"pwd"];
-    [_xmppStream authenticateWithPassword:pwd error:&err];
-    if(err)
-    {
-        NSLog(@"%@",err);
-    }
-}
-- (void)sendOnlineToHost
-{
-    XMPPPresence *presence = [XMPPPresence presence];
-    NSLog(@"%@",presence);
-    [_xmppStream sendElement:presence];
-}
-
-- (void)connectToHost
-{
-    if (_xmppStream==nil) {
-        [self setupXMPPStream];
-    }
-    //设置jid
-    //从沙盒获取用户名
-    NSString *user = [[NSUserDefaults standardUserDefaults]objectForKey:@"user"];
-    
-    
-    
-    XMPPJID *myJid = [XMPPJID jidWithUser:user domain:@"peterpyx" resource:@"iphone"];
-    _xmppStream.myJID = myJid;
-    
-    //设置服务器域名
-    _xmppStream.hostName = @"127.0.0.1";//不仅可以是域名 还可以是ip地址
-    
-    //设置端口 默认5222
-    _xmppStream.hostPort = 5222;
-    
-    
-    NSError *err = nil;
-    if ([_xmppStream connectWithTimeout:XMPPStreamTimeoutNone error:&err]==false) {
-        NSLog(@"%@",err);
-    };
-}
-
-#pragma 连接成功
-- (void)xmppStreamDidConnect:(XMPPStream *)sender
-{
-    NSLog(@"与主机连接成功");
-    [self sendPwdToHost];
-    
-}
-
-- (void)xmppStreamDidDisconnect:(XMPPStream *)sender withError:(NSError *)error
-{
-    NSLog(@"与主机断开连接 %@",error);
-    
-}
-#pragma 授权成功
-- (void)xmppStreamDidAuthenticate:(XMPPStream *)sender
-{
-    NSLog(@"授权成功");
-    [self sendOnlineToHost];
-    
-    //登陆成功 来到主界面
-    
-    //此方法实在子线程被调用的 所以要在主线程刷新UI
-    dispatch_async(dispatch_get_main_queue(), ^
-                   {
-                       UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                       self.window.rootViewController = storyBoard.instantiateInitialViewController;
-
-                   });
-   }
-
-- (void)xmppStream:(XMPPStream *)sender didNotAuthenticate:(DDXMLElement *)error
-{
-    NSLog(@"授权失败  %@",error);
-}
-
-#pragma public
-
-- (void)logout
-{
-    //注销
-    XMPPPresence *offline = [XMPPPresence presenceWithType:@"unavaliable"];
-    [_xmppStream sendElement:offline];
-    [_xmppStream disconnect];
-    
-}
-
--(void) xmppUserLogin
-{
-    [self connectToHost];
-    
-}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    // 打开XMPP的日志
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    
+    
     // Override point for customization after application launch.
    // [self connectToHost];
+    [PeNaviController setupNavTheme];
+    //从沙盒里面加载数据到单例里面
+    
+    [[PeUserInfo sharedPeUserInfo] getUserInfoFormBox];
+    
+    //判断登陆状态 YES 就去主页面
+    if([PeUserInfo sharedPeUserInfo].loginStatus ==YES)
+    {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        self.window.rootViewController = sb.instantiateInitialViewController;
+         [[PeXmppTool sharedPeXmppTool ]xmppUserLogin:nil];
+    }
     
     return YES;
 }

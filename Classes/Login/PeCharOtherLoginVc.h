@@ -6,8 +6,7 @@
 //  Copyright (c) 2015年 zgjxpxpyx. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-@interface PeCharOtherLoginVc : UIViewController
+#import "PeBaseLoginVc.h"
+@interface PeCharOtherLoginVc : PeBaseLoginVc
 
 @end

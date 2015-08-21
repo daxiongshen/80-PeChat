@@ -326,18 +326,18 @@
 	// Since it's a double, it can yield sub-millisecond precision.
 	// 
 	// In addition to this, it stores the values in UTC.
-	// However, if you print the value using NSLog via "%@",
+	// However, if you print the value using PETERLog via "%@",
 	// it will automatically print the date in the local timezone:
 	// 
 	// NSDate *refDate = [NSDate dateWithTimeIntervalSinceReferenceDate:0.0];
 	// 
-	// NSLog(@"%f", [refDate timeIntervalSinceReferenceDate]);  // Prints: 0.0
-	// NSLog(@"%@", refDate);                                   // Prints: 2000-12-31 19:00:00 -05:00
-	// NSLog(@"%@", [utcDateFormatter stringFromDate:refDate]); // Prints: 2001-01-01 00:00:00 +00:00
+	// PETERLog(@"%f", [refDate timeIntervalSinceReferenceDate]);  // Prints: 0.0
+	// PETERLog(@"%@", refDate);                                   // Prints: 2000-12-31 19:00:00 -05:00
+	// PETERLog(@"%@", [utcDateFormatter stringFromDate:refDate]); // Prints: 2001-01-01 00:00:00 +00:00
 	// 
 	// Now the value we've received from XMPPDateTimeProfiles is correct.
 	// If we print it out using a utcDateFormatter we would see it is correct.
-	// If we printed it out generically using NSLog, then we would see it converted into our local time zone.
+	// If we printed it out generically using PETERLog, then we would see it converted into our local time zone.
 	
 	return [XMPPDateTimeProfiles parseDateTime:utc];
 }

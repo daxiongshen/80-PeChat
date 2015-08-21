@@ -189,7 +189,7 @@
 {
 	if (jid == nil)
 	{
-		NSLog(@"XMPPUserCoreDataStorageObject: invalid jid (nil)");
+		PETERLog(@"XMPPUserCoreDataStorageObject: invalid jid (nil)");
 		return nil;
 	}
 	
@@ -216,7 +216,7 @@
 	
 	if (jid == nil)
 	{
-		NSLog(@"XMPPUserCoreDataStorageObject: invalid item (missing or invalid jid): %@", item);
+		PETERLog(@"XMPPUserCoreDataStorageObject: invalid item (missing or invalid jid): %@", item);
 		return nil;
 	}
 	
@@ -262,7 +262,7 @@
 	
 	if (jid == nil)
 	{
-		NSLog(@"XMPPUserCoreDataStorageObject: invalid item (missing or invalid jid): %@", item);
+		PETERLog(@"XMPPUserCoreDataStorageObject: invalid item (missing or invalid jid): %@", item);
 		return;
 	}
 	

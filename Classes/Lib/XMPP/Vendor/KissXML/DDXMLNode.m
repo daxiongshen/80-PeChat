@@ -2085,7 +2085,7 @@ static void MarkZombies(void *xmlPtr)
 	
 	dispatch_async(zombieQueue, ^{
 		
-	//	NSLog(@"MarkZombies: %p", xmlPtr);
+	//	PETERLog(@"MarkZombies: %p", xmlPtr);
 		
 		CFDictionaryRemoveValue(zombieTracker, xmlPtr);
 	});
@@ -2099,7 +2099,7 @@ static void MarkBirth(void *xmlPtr, DDXMLNode *wrapper)
 	
 	dispatch_async(zombieQueue, ^{
 		
-	//	NSLog(@"MarkBirth: %p, %p", xmlPtr, value);
+	//	PETERLog(@"MarkBirth: %p, %p", xmlPtr, value);
 		
 		CFMutableArrayRef values = (CFMutableArrayRef)CFDictionaryGetValue(zombieTracker, xmlPtr);
 		if (values == NULL)
@@ -2125,7 +2125,7 @@ static void MarkDeath(void *xmlPtr, DDXMLNode *wrapper)
 	
 	dispatch_async(zombieQueue, ^{
 		
-	//	NSLog(@"MarkDeath: %p, %p", xmlPtr, value);
+	//	PETERLog(@"MarkDeath: %p, %p", xmlPtr, value);
 		
 		CFMutableArrayRef values = (CFMutableArrayRef)CFDictionaryGetValue(zombieTracker, xmlPtr);
 		if (values)

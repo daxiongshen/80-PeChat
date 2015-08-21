@@ -23,15 +23,15 @@
 // But we still want to leave our log statements for any future debugging,
 // and to allow other developers to trace the implementation (which is a great learning tool).
 // 
-// So we use primitive logging macros around NSLog.
-// We maintain the NS prefix on the macros to be explicit about the fact that we're using NSLog.
+// So we use primitive logging macros around PETERLog.
+// We maintain the NS prefix on the macros to be explicit about the fact that we're using PETERLog.
 
 #define LOG_LEVEL 2
 
-#define NSLogError(frmt, ...)    do{ if(LOG_LEVEL >= 1) NSLog((frmt), ##__VA_ARGS__); } while(0)
-#define NSLogWarn(frmt, ...)     do{ if(LOG_LEVEL >= 2) NSLog((frmt), ##__VA_ARGS__); } while(0)
-#define NSLogInfo(frmt, ...)     do{ if(LOG_LEVEL >= 3) NSLog((frmt), ##__VA_ARGS__); } while(0)
-#define NSLogVerbose(frmt, ...)  do{ if(LOG_LEVEL >= 4) NSLog((frmt), ##__VA_ARGS__); } while(0)
+#define PETERLogError(frmt, ...)    do{ if(LOG_LEVEL >= 1) PETERLog((frmt), ##__VA_ARGS__); } while(0)
+#define PETERLogWarn(frmt, ...)     do{ if(LOG_LEVEL >= 2) PETERLog((frmt), ##__VA_ARGS__); } while(0)
+#define PETERLogInfo(frmt, ...)     do{ if(LOG_LEVEL >= 3) PETERLog((frmt), ##__VA_ARGS__); } while(0)
+#define PETERLogVerbose(frmt, ...)  do{ if(LOG_LEVEL >= 4) PETERLog((frmt), ##__VA_ARGS__); } while(0)
 
 @interface DDLogFileManagerDefault (PrivateAPI)
 
@@ -76,8 +76,8 @@
 		
 		[self addObserver:self forKeyPath:@"maximumNumberOfLogFiles" options:kvoOptions context:nil];
 		
-		NSLogVerbose(@"DDFileLogManagerDefault: logsDirectory:\n%@", [self logsDirectory]);
-		NSLogVerbose(@"DDFileLogManagerDefault: sortedLogFileNames:\n%@", [self sortedLogFileNames]);
+		PETERLogVerbose(@"DDFileLogManagerDefault: logsDirectory:\n%@", [self logsDirectory]);
+		PETERLogVerbose(@"DDFileLogManagerDefault: sortedLogFileNames:\n%@", [self sortedLogFileNames]);
 	}
 	return self;
 }
@@ -107,7 +107,7 @@
 	
 	if ([keyPath isEqualToString:@"maximumNumberOfLogFiles"])
 	{
-		NSLogInfo(@"DDFileLogManagerDefault: Responding to configuration change: maximumNumberOfLogFiles");
+		PETERLogInfo(@"DDFileLogManagerDefault: Responding to configuration change: maximumNumberOfLogFiles");
 		
 		dispatch_async([DDLog loggingQueue], ^{ @autoreleasepool {
 			
@@ -125,7 +125,7 @@
 **/
 - (void)deleteOldLogFiles
 {
-	NSLogVerbose(@"DDLogFileManagerDefault: deleteOldLogFiles");
+	PETERLogVerbose(@"DDLogFileManagerDefault: deleteOldLogFiles");
 	
 	NSUInteger maxNumLogFiles = self.maximumNumberOfLogFiles;
 	if (maxNumLogFiles == 0)
@@ -170,7 +170,7 @@
 	{
 		DDLogFileInfo *logFileInfo = [sortedArchivedLogFileInfos objectAtIndex:i];
 		
-		NSLogInfo(@"DDLogFileManagerDefault: Deleting file: %@", logFileInfo.fileName);
+		PETERLogInfo(@"DDLogFileManagerDefault: Deleting file: %@", logFileInfo.fileName);
 		
 		[[NSFileManager defaultManager] removeItemAtPath:logFileInfo.filePath error:nil];
 	}
@@ -213,7 +213,7 @@
 		if (![[NSFileManager defaultManager] createDirectoryAtPath:_logsDirectory
 		                               withIntermediateDirectories:YES attributes:nil error:&err])
 		{
-			NSLogError(@"DDFileLogManagerDefault: Error creating logsDirectory: %@", err);
+			PETERLogError(@"DDFileLogManagerDefault: Error creating logsDirectory: %@", err);
 		}
 	}
 	
@@ -397,7 +397,7 @@
 		
 		if (![[NSFileManager defaultManager] fileExistsAtPath:filePath])
 		{
-			NSLogVerbose(@"DDLogFileManagerDefault: Creating new log file: %@", fileName);
+			PETERLogVerbose(@"DDLogFileManagerDefault: Creating new log file: %@", fileName);
 			
 			[[NSFileManager defaultManager] createFileAtPath:filePath contents:nil attributes:nil];
 			
@@ -636,10 +636,10 @@
 	
 	NSDate *logFileRollingDate = [NSDate dateWithTimeIntervalSinceReferenceDate:ti];
 	
-	NSLogVerbose(@"DDFileLogger: scheduleTimerToRollLogFileDueToAge");
+	PETERLogVerbose(@"DDFileLogger: scheduleTimerToRollLogFileDueToAge");
 	
-	NSLogVerbose(@"DDFileLogger: logFileCreationDate: %@", logFileCreationDate);
-	NSLogVerbose(@"DDFileLogger: logFileRollingDate : %@", logFileRollingDate);
+	PETERLogVerbose(@"DDFileLogger: logFileCreationDate: %@", logFileCreationDate);
+	PETERLogVerbose(@"DDFileLogger: logFileRollingDate : %@", logFileRollingDate);
 	
 	rollingTimer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, loggerQueue);
 	
@@ -693,7 +693,7 @@
 
 - (void)rollLogFileNow
 {
-	NSLogVerbose(@"DDFileLogger: rollLogFileNow");
+	PETERLogVerbose(@"DDFileLogger: rollLogFileNow");
 	
 	
 	if (currentLogFileHandle == nil) return;
@@ -722,7 +722,7 @@
 {
 	if (rollingFrequency > 0.0 && currentLogFileInfo.age >= rollingFrequency)
 	{
-		NSLogVerbose(@"DDFileLogger: Rolling log file due to age...");
+		PETERLogVerbose(@"DDFileLogger: Rolling log file due to age...");
 		
 		[self rollLogFileNow];
 	}
@@ -746,7 +746,7 @@
 		
 		if (fileSize >= maximumFileSize)
 		{
-			NSLogVerbose(@"DDFileLogger: Rolling log file due to size (%qu)...", fileSize);
+			PETERLogVerbose(@"DDFileLogger: Rolling log file due to size (%qu)...", fileSize);
 			
 			[self rollLogFileNow];
 		}
@@ -795,7 +795,7 @@
 			
 			if (useExistingLogFile)
 			{
-				NSLogVerbose(@"DDFileLogger: Resuming logging with file %@", mostRecentLogFileInfo.fileName);
+				PETERLogVerbose(@"DDFileLogger: Resuming logging with file %@", mostRecentLogFileInfo.fileName);
 				
 				currentLogFileInfo = mostRecentLogFileInfo;
 			}
@@ -987,7 +987,7 @@
 		}
 		else
 		{
-			NSLogError(@"DDLogFileInfo: creationDate(%@): getattrlist result = %i", self.fileName, result);
+			PETERLogError(@"DDLogFileInfo: creationDate(%@): getattrlist result = %i", self.fileName, result);
 		}
 		
 	#else
@@ -1131,12 +1131,12 @@
 		
 		NSString *newFilePath = [fileDir stringByAppendingPathComponent:newFileName];
 		
-		NSLogVerbose(@"DDLogFileInfo: Renaming file: '%@' -> '%@'", self.fileName, newFileName);
+		PETERLogVerbose(@"DDLogFileInfo: Renaming file: '%@' -> '%@'", self.fileName, newFileName);
 		
 		NSError *error = nil;
 		if (![[NSFileManager defaultManager] moveItemAtPath:filePath toPath:newFilePath error:&error])
 		{
-			NSLogError(@"DDLogFileInfo: Error renaming file (%@): %@", self.fileName, error);
+			PETERLogError(@"DDLogFileInfo: Error renaming file (%@): %@", self.fileName, error);
 		}
 		
 		filePath = newFilePath;
@@ -1318,7 +1318,7 @@
 	
 	if (result < 0)
 	{
-		NSLogError(@"DDLogFileInfo: setxattr(%@, %@): error = %i", attrName, self.fileName, result);
+		PETERLogError(@"DDLogFileInfo: setxattr(%@, %@): error = %i", attrName, self.fileName, result);
 	}
 }
 
@@ -1331,7 +1331,7 @@
 	
 	if (result < 0 && errno != ENOATTR)
 	{
-		NSLogError(@"DDLogFileInfo: removexattr(%@, %@): error = %i", attrName, self.fileName, result);
+		PETERLogError(@"DDLogFileInfo: removexattr(%@, %@): error = %i", attrName, self.fileName, result);
 	}
 }
 

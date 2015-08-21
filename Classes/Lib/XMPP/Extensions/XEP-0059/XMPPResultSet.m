@@ -29,7 +29,7 @@
 	
 	if (superSize != ourSize)
 	{
-		NSLog(@"Adding instance variables to XMPPResultSet is not currently supported!");
+		PETERLog(@"Adding instance variables to XMPPResultSet is not currently supported!");
 		exit(15);
 	}
 }

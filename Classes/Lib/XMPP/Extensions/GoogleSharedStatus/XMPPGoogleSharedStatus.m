@@ -109,7 +109,7 @@ NSString *const XMPPGoogleSharedStatusShowIdle = @"away";
 // count, and cuts status strings to the max string length.
 - (void)updateSharedStatus:(NSString *)status show:(NSString *)show invisible:(BOOL)invisible {
 	if(!self.sharedStatusSupported) {
-		NSLog(@"Google Shared Status Not Supported!");
+		PETERLog(@"Google Shared Status Not Supported!");
 		return;
 	}
 	
@@ -256,7 +256,7 @@ NSString *const XMPPGoogleSharedStatusShowIdle = @"away";
 				[dict setObject:[NSNumber numberWithBool:[[[element attributeForName:@"value"] stringValue] boolValue]]
 						 forKey:element.name];
 			} else {
-				NSLog(@"Missed element: %@", element);
+				PETERLog(@"Missed element: %@", element);
 			}
 		}
 		
@@ -291,7 +291,7 @@ NSString *const XMPPGoogleSharedStatusShowIdle = @"away";
 		} else if(!([key isEqualToString:XMPPGoogleSharedStatusInvisible] ||
 					[key isEqualToString:XMPPGoogleSharedStatusShow] ||
 					[key isEqualToString:XMPPGoogleSharedStatusStatus])) {
-			NSLog(@"Invalid element: %@", key);
+			PETERLog(@"Invalid element: %@", key);
 		}
 	}
 	

@@ -8,6 +8,7 @@
 
 #import "PeCharOtherLoginVc.h"
 #import "AppDelegate.h"
+#import "PeUserInfo.h"
 
 @interface PeCharOtherLoginVc ()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftConstraint;
@@ -21,10 +22,12 @@
 
 @implementation PeCharOtherLoginVc
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     //判断当前类型
+    self.title = @"其他方式登陆";
     if([UIDevice currentDevice ].userInterfaceIdiom == UIUserInterfaceIdiomPhone)
     {
         self.leftConstraint.constant = 10;
@@ -44,16 +47,29 @@
     //登陆
     
     //把用户密码存沙盒  调用appdelegate 的connect 连接登陆
-    
     NSString *user = self.userField.text;
     NSString *pwd = self.pwdField.text;
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:user forKey:@"user"];
-    [defaults setObject:pwd forKey:@"pwd"];
-    [defaults synchronize];
-    AppDelegate *app = [UIApplication sharedApplication].delegate;
-    [app xmppUserLogin];
     
+    //这里是保存到单例里面去
+    
+    PeUserInfo *userinfo = [PeUserInfo sharedPeUserInfo];
+    userinfo.user = user;
+    userinfo.pwd = pwd;
+    
+     [super login];
+    
+    
+}
+
+
+- (IBAction)cancel:(id)sender {
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
+
+- (void)dealloc
+{
+    //表示控制器还没销毁 存在内存泄漏的问题
+    PETERLog(@"%s", __func__);
 }
 
 /*

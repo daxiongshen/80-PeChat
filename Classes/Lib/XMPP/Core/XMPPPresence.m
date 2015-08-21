@@ -28,7 +28,7 @@
 	
 	if (superSize != ourSize)
 	{
-		NSLog(@"Adding instance variables to XMPPPresence is not currently supported!");
+		PETERLog(@"Adding instance variables to XMPPPresence is not currently supported!");
 		exit(15);
 	}
 }

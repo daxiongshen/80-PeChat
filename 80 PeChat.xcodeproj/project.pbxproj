@@ -152,6 +152,18 @@
 		D09E8ECF1B81788F000DC530 /* UIStoryboard+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = D09E8EC71B81788F000DC530 /* UIStoryboard+WF.m */; };
 		D09E8ED01B81788F000DC530 /* UITextField+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = D09E8EC91B81788F000DC530 /* UITextField+WF.m */; };
 		D09E8ED11B81788F000DC530 /* UIView+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = D09E8ECB1B81788F000DC530 /* UIView+WF.m */; };
+		D09E8ED81B81CFB1000DC530 /* MBProgressHUD+HM.m in Sources */ = {isa = PBXBuildFile; fileRef = D09E8ED41B81CFB1000DC530 /* MBProgressHUD+HM.m */; };
+		D09E8ED91B81CFB1000DC530 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D09E8ED51B81CFB1000DC530 /* MBProgressHUD.bundle */; };
+		D09E8EDA1B81CFB1000DC530 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D09E8ED71B81CFB1000DC530 /* MBProgressHUD.m */; };
+		D0AC422A1B82CC680021DC4F /* PeNaviController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AC42291B82CC680021DC4F /* PeNaviController.m */; };
+		D0AC42311B8308ED0021DC4F /* PeLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AC42301B8308ED0021DC4F /* PeLoginViewController.m */; };
+		D0AC423A1B830AFF0021DC4F /* PeUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AC42381B830AFF0021DC4F /* PeUserInfo.m */; };
+		D0AC423D1B831D4A0021DC4F /* PeBaseLoginVc.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AC423C1B831D4A0021DC4F /* PeBaseLoginVc.m */; };
+		D0AC42401B8355B90021DC4F /* PeRegisterVc.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AC423F1B8355B90021DC4F /* PeRegisterVc.m */; };
+		D0AC42431B842A6E0021DC4F /* PeXmppTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AC42421B842A6E0021DC4F /* PeXmppTool.m */; };
+		D0D766F41B8564D400807D33 /* PeMeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D766F31B8564D400807D33 /* PeMeTableViewController.m */; };
+		D0D766F71B85691900807D33 /* PeMeDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D766F61B85691900807D33 /* PeMeDetailTableViewController.m */; };
+		D0F134451B85786C00B5635B /* PeEditMeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F134441B85786C00B5635B /* PeEditMeTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -415,10 +427,10 @@
 		D09E8E0E1B8158B4000DC530 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
 		D09E8E101B8158B4000DC530 /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
 		D09E8E111B8158B4000DC530 /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
-		D09E8E121B8158B4000DC530 /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
+		D09E8E121B8158B4000DC530 /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = DDASLLogger.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		D09E8E131B8158B4000DC530 /* DDASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogger.m; sourceTree = "<group>"; };
 		D09E8E141B8158B4000DC530 /* DDFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFileLogger.h; sourceTree = "<group>"; };
-		D09E8E151B8158B4000DC530 /* DDFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFileLogger.m; sourceTree = "<group>"; };
+		D09E8E151B8158B4000DC530 /* DDFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DDFileLogger.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D09E8E161B8158B4000DC530 /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLog.h; sourceTree = "<group>"; };
 		D09E8E171B8158B4000DC530 /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLog.m; sourceTree = "<group>"; };
 		D09E8E181B8158B4000DC530 /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
@@ -448,7 +460,7 @@
 		D09E8EB71B81599A000DC530 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		D09E8EB81B816829000DC530 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		D09E8EBB1B8172F6000DC530 /* PeCharOtherLoginVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeCharOtherLoginVc.h; sourceTree = "<group>"; };
-		D09E8EBC1B8172F6000DC530 /* PeCharOtherLoginVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeCharOtherLoginVc.m; sourceTree = "<group>"; };
+		D09E8EBC1B8172F6000DC530 /* PeCharOtherLoginVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PeCharOtherLoginVc.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D09E8EBF1B81788E000DC530 /* CategoryWF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryWF.h; sourceTree = "<group>"; };
 		D09E8EC01B81788E000DC530 /* UIButton+WF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+WF.h"; sourceTree = "<group>"; };
 		D09E8EC11B81788E000DC530 /* UIButton+WF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WF.m"; sourceTree = "<group>"; };
@@ -462,6 +474,30 @@
 		D09E8EC91B81788F000DC530 /* UITextField+WF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+WF.m"; sourceTree = "<group>"; };
 		D09E8ECA1B81788F000DC530 /* UIView+WF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WF.h"; sourceTree = "<group>"; };
 		D09E8ECB1B81788F000DC530 /* UIView+WF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WF.m"; sourceTree = "<group>"; };
+		D09E8ED31B81CFB1000DC530 /* MBProgressHUD+HM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+HM.h"; sourceTree = "<group>"; };
+		D09E8ED41B81CFB1000DC530 /* MBProgressHUD+HM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+HM.m"; sourceTree = "<group>"; };
+		D09E8ED51B81CFB1000DC530 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		D09E8ED61B81CFB1000DC530 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		D09E8ED71B81CFB1000DC530 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		D0AC42281B82CC680021DC4F /* PeNaviController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeNaviController.h; sourceTree = "<group>"; };
+		D0AC42291B82CC680021DC4F /* PeNaviController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeNaviController.m; sourceTree = "<group>"; };
+		D0AC422F1B8308ED0021DC4F /* PeLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeLoginViewController.h; sourceTree = "<group>"; };
+		D0AC42301B8308ED0021DC4F /* PeLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PeLoginViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		D0AC42371B830AFF0021DC4F /* PeUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeUserInfo.h; sourceTree = "<group>"; };
+		D0AC42381B830AFF0021DC4F /* PeUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeUserInfo.m; sourceTree = "<group>"; };
+		D0AC42391B830AFF0021DC4F /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		D0AC423B1B831D4A0021DC4F /* PeBaseLoginVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeBaseLoginVc.h; sourceTree = "<group>"; };
+		D0AC423C1B831D4A0021DC4F /* PeBaseLoginVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PeBaseLoginVc.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		D0AC423E1B8355B90021DC4F /* PeRegisterVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeRegisterVc.h; sourceTree = "<group>"; };
+		D0AC423F1B8355B90021DC4F /* PeRegisterVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeRegisterVc.m; sourceTree = "<group>"; };
+		D0AC42411B842A6E0021DC4F /* PeXmppTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeXmppTool.h; sourceTree = "<group>"; };
+		D0AC42421B842A6E0021DC4F /* PeXmppTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeXmppTool.m; sourceTree = "<group>"; };
+		D0D766F21B8564D400807D33 /* PeMeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeMeTableViewController.h; sourceTree = "<group>"; };
+		D0D766F31B8564D400807D33 /* PeMeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeMeTableViewController.m; sourceTree = "<group>"; };
+		D0D766F51B85691900807D33 /* PeMeDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeMeDetailTableViewController.h; sourceTree = "<group>"; };
+		D0D766F61B85691900807D33 /* PeMeDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeMeDetailTableViewController.m; sourceTree = "<group>"; };
+		D0F134431B85786C00B5635B /* PeEditMeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeEditMeTableViewController.h; sourceTree = "<group>"; };
+		D0F134441B85786C00B5635B /* PeEditMeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeEditMeTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -550,6 +586,7 @@
 		D09E8CE01B815894000DC530 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D0AC42261B82CC3F0021DC4F /* Common */,
 				D09E8CE11B815894000DC530 /* Lib */,
 				D09E8CE21B815894000DC530 /* Login */,
 				D09E8CE31B815894000DC530 /* Main */,
@@ -561,6 +598,7 @@
 		D09E8CE11B815894000DC530 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				D09E8ED21B81CFB1000DC530 /* MBProgessHUD */,
 				D09E8EBE1B81788E000DC530 /* Category */,
 				D09E8CE51B8158B3000DC530 /* XMPP */,
 			);
@@ -579,6 +617,7 @@
 		D09E8CE31B815894000DC530 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				D0AC422B1B82DD0B0021DC4F /* Controller */,
 				D09E8CC41B815860000DC530 /* Main.storyboard */,
 			);
 			path = Main;
@@ -1380,6 +1419,12 @@
 			children = (
 				D09E8EBB1B8172F6000DC530 /* PeCharOtherLoginVc.h */,
 				D09E8EBC1B8172F6000DC530 /* PeCharOtherLoginVc.m */,
+				D0AC422F1B8308ED0021DC4F /* PeLoginViewController.h */,
+				D0AC42301B8308ED0021DC4F /* PeLoginViewController.m */,
+				D0AC423B1B831D4A0021DC4F /* PeBaseLoginVc.h */,
+				D0AC423C1B831D4A0021DC4F /* PeBaseLoginVc.m */,
+				D0AC423E1B8355B90021DC4F /* PeRegisterVc.h */,
+				D0AC423F1B8355B90021DC4F /* PeRegisterVc.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1402,6 +1447,61 @@
 				D09E8ECB1B81788F000DC530 /* UIView+WF.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		D09E8ED21B81CFB1000DC530 /* MBProgessHUD */ = {
+			isa = PBXGroup;
+			children = (
+				D09E8ED31B81CFB1000DC530 /* MBProgressHUD+HM.h */,
+				D09E8ED41B81CFB1000DC530 /* MBProgressHUD+HM.m */,
+				D09E8ED51B81CFB1000DC530 /* MBProgressHUD.bundle */,
+				D09E8ED61B81CFB1000DC530 /* MBProgressHUD.h */,
+				D09E8ED71B81CFB1000DC530 /* MBProgressHUD.m */,
+			);
+			path = MBProgessHUD;
+			sourceTree = "<group>";
+		};
+		D0AC42261B82CC3F0021DC4F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D0AC42361B830AFF0021DC4F /* SingleTon */,
+				D0AC42271B82CC400021DC4F /* Controller */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		D0AC42271B82CC400021DC4F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D0AC42281B82CC680021DC4F /* PeNaviController.h */,
+				D0AC42291B82CC680021DC4F /* PeNaviController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D0AC422B1B82DD0B0021DC4F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D0D766F21B8564D400807D33 /* PeMeTableViewController.h */,
+				D0D766F31B8564D400807D33 /* PeMeTableViewController.m */,
+				D0D766F51B85691900807D33 /* PeMeDetailTableViewController.h */,
+				D0D766F61B85691900807D33 /* PeMeDetailTableViewController.m */,
+				D0F134431B85786C00B5635B /* PeEditMeTableViewController.h */,
+				D0F134441B85786C00B5635B /* PeEditMeTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D0AC42361B830AFF0021DC4F /* SingleTon */ = {
+			isa = PBXGroup;
+			children = (
+				D0AC42371B830AFF0021DC4F /* PeUserInfo.h */,
+				D0AC42381B830AFF0021DC4F /* PeUserInfo.m */,
+				D0AC42391B830AFF0021DC4F /* Singleton.h */,
+				D0AC42411B842A6E0021DC4F /* PeXmppTool.h */,
+				D0AC42421B842A6E0021DC4F /* PeXmppTool.m */,
+			);
+			path = SingleTon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1490,6 +1590,7 @@
 				D09E8CCB1B815860000DC530 /* LaunchScreen.xib in Resources */,
 				D09E8EAC1B8158B4000DC530 /* README.txt in Resources */,
 				D09E8CC81B815860000DC530 /* Images.xcassets in Resources */,
+				D09E8ED91B81CFB1000DC530 /* MBProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1514,10 +1615,12 @@
 				D09E8E801B8158B4000DC530 /* XMPPTransports.m in Sources */,
 				D09E8E3F1B8158B4000DC530 /* XMPPJID.m in Sources */,
 				D09E8E3B1B8158B4000DC530 /* NSNumber+XMPP.m in Sources */,
+				D09E8EDA1B81CFB1000DC530 /* MBProgressHUD.m in Sources */,
 				D09E8E921B8158B4000DC530 /* XMPPAutoPing.m in Sources */,
 				D09E8E861B8158B4000DC530 /* XMPPCapabilities.m in Sources */,
 				D09E8E451B8158B4000DC530 /* XMPPBandwidthMonitor.m in Sources */,
 				D09E8E511B8158B4000DC530 /* XMPPUserMemoryStorageObject.m in Sources */,
+				D0AC423D1B831D4A0021DC4F /* PeBaseLoginVc.m in Sources */,
 				D09E8E901B8158B4000DC530 /* XMPPMessageDeliveryReceipts.m in Sources */,
 				D09E8E3A1B8158B4000DC530 /* NSData+XMPP.m in Sources */,
 				D09E8E4A1B8158B4000DC530 /* XMPPGroupCoreDataStorageObject.m in Sources */,
@@ -1532,6 +1635,8 @@
 				D09E8E6A1B8158B4000DC530 /* XMPPvCardCoreDataStorage.m in Sources */,
 				D09E8E641B8158B4000DC530 /* XMPPRoomOccupantMemoryStorageObject.m in Sources */,
 				D09E8CC31B815860000DC530 /* ViewController.m in Sources */,
+				D0D766F71B85691900807D33 /* PeMeDetailTableViewController.m in Sources */,
+				D0F134451B85786C00B5635B /* PeEditMeTableViewController.m in Sources */,
 				D09E8E831B8158B4000DC530 /* XMPPCapabilitiesCoreDataStorage.m in Sources */,
 				D09E8E6E1B8158B4000DC530 /* XMPPvCardTempAdr.m in Sources */,
 				D09E8CC01B815860000DC530 /* AppDelegate.m in Sources */,
@@ -1562,9 +1667,11 @@
 				D09E8EA81B8158B4000DC530 /* DDLog.m in Sources */,
 				D09E8EAA1B8158B4000DC530 /* ContextFilterLogFormatter.m in Sources */,
 				D09E8EA71B8158B4000DC530 /* DDFileLogger.m in Sources */,
+				D0AC423A1B830AFF0021DC4F /* PeUserInfo.m in Sources */,
 				D09E8ECC1B81788F000DC530 /* UIButton+WF.m in Sources */,
 				D09E8E9B1B8158B4000DC530 /* XMPPMessage+XEP_0308.m in Sources */,
 				D09E8E571B8158B4000DC530 /* XMPPIQ+LastActivity.m in Sources */,
+				D0AC42401B8355B90021DC4F /* PeRegisterVc.m in Sources */,
 				D09E8E961B8158B4000DC530 /* NSXMLElement+XEP_0203.m in Sources */,
 				D09E8E631B8158B4000DC530 /* XMPPRoomMessageMemoryStorageObject.m in Sources */,
 				D09E8E991B8158B4000DC530 /* XMPPMessage+XEP_0224.m in Sources */,
@@ -1576,6 +1683,7 @@
 				D09E8E4C1B8158B4000DC530 /* XMPPRoster.xcdatamodel in Sources */,
 				D09E8E841B8158B4000DC530 /* XMPPCapsCoreDataStorageObject.m in Sources */,
 				D09E8E9E1B8158B4000DC530 /* DDList.m in Sources */,
+				D0AC422A1B82CC680021DC4F /* PeNaviController.m in Sources */,
 				D09E8EAB1B8158B4000DC530 /* DispatchQueueLogFormatter.m in Sources */,
 				D09E8ED01B81788F000DC530 /* UITextField+WF.m in Sources */,
 				D09E8E421B8158B4000DC530 /* XMPPParser.m in Sources */,
@@ -1603,6 +1711,7 @@
 				D09E8E391B8158B4000DC530 /* XMPPXOAuth2Google.m in Sources */,
 				D09E8E3C1B8158B4000DC530 /* NSXMLElement+XMPP.m in Sources */,
 				D09E8EAE1B8158B4000DC530 /* DDXMLDocument.m in Sources */,
+				D0AC42311B8308ED0021DC4F /* PeLoginViewController.m in Sources */,
 				D09E8E9C1B8158B4000DC530 /* XMPPMessage+XEP_0333.m in Sources */,
 				D09E8E731B8158B4000DC530 /* XMPPvCardTempModule.m in Sources */,
 				D09E8E4D1B8158B4000DC530 /* XMPPRosterCoreDataStorage.m in Sources */,
@@ -1611,8 +1720,10 @@
 				D09E8E721B8158B4000DC530 /* XMPPvCardTempLabel.m in Sources */,
 				D09E8E8E1B8158B4000DC530 /* XMPPPresence+XEP_0172.m in Sources */,
 				D09E8E561B8158B4000DC530 /* XMPPJabberRPCModule.m in Sources */,
+				D0AC42431B842A6E0021DC4F /* PeXmppTool.m in Sources */,
 				D09E8E7D1B8158B4000DC530 /* XMPPDateTimeProfiles.m in Sources */,
 				D09E8E7B1B8158B4000DC530 /* XMPPMessage+XEP_0066.m in Sources */,
+				D09E8ED81B81CFB1000DC530 /* MBProgressHUD+HM.m in Sources */,
 				D09E8E3E1B8158B4000DC530 /* XMPPIQ.m in Sources */,
 				D09E8E771B8158B4000DC530 /* XMPPIQ+XEP_0060.m in Sources */,
 				D09E8E331B8158B4000DC530 /* XMPPAnonymousAuthentication.m in Sources */,
@@ -1629,6 +1740,7 @@
 				D09E8E5C1B8158B4000DC530 /* XMPPRoomMessageCoreDataStorageObject.m in Sources */,
 				D09E8EBD1B8172F6000DC530 /* PeCharOtherLoginVc.m in Sources */,
 				D09E8E7E1B8158B4000DC530 /* XMPPMessage+XEP_0085.m in Sources */,
+				D0D766F41B8564D400807D33 /* PeMeTableViewController.m in Sources */,
 				D09E8EA41B8158B4000DC530 /* GCDAsyncSocket.m in Sources */,
 				D09E8E6B1B8158B4000DC530 /* XMPPvCardCoreDataStorageObject.m in Sources */,
 				D09E8EAD1B8158B4000DC530 /* NSString+DDXML.m in Sources */,
@@ -1867,6 +1979,7 @@
 				D09E8CDC1B815860000DC530 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D09E8CDD1B815860000DC530 /* Build configuration list for PBXNativeTarget "80 PeChatTests" */ = {
 			isa = XCConfigurationList;
@@ -1875,6 +1988,7 @@
 				D09E8CDF1B815860000DC530 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
