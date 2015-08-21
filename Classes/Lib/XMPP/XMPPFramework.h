@@ -29,7 +29,8 @@
 #import "XMPPvCardCoreDataStorage.h"
 //头像模块
 #import "XMPPvCardAvatarModule.h"
- 
+
+#import "XMPPReconnect.h"
 // List the modules you're using here:
 // (the following may not be a complete list)
 
@@ -37,7 +38,7 @@
 // 
 //#import "XMPPCoreDataStorage.h"
 //
-//#import "XMPPReconnect.h"
+
 //
 //#import "XMPPRoster.h"
 //#import "XMPPRosterMemoryStorage.h"

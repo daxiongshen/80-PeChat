@@ -19,7 +19,7 @@
     XMPPvCardTempModule *_vCard;//电子名片
     XMPPvCardCoreDataStorage *_vCardStorage;//电子名片数据存储
     XMPPvCardAvatarModule *_avart;//头像模块
-    
+    XMPPReconnect *_reConnect;//自动连接模块
 }
 
 -(void) setupXMPPStream;
@@ -32,6 +32,10 @@ singleton_implementation(PeXmppTool);
 
 
 #pragma 初始化xmppstream
+- (void)dealloc
+{
+    [self teardownXmpp];
+}
 - (void) setupXMPPStream
 {
     _xmppStream = [[XMPPStream alloc]init];
@@ -43,6 +47,10 @@ singleton_implementation(PeXmppTool);
     
     //激活电子名片操作
     [_vCard activate:_xmppStream];
+    
+    //添加自动连接模块
+    _reConnect = [[XMPPReconnect alloc]init];
+    [_reConnect activate:_xmppStream];
     
     // 添加头像模块
     _avart = [[XMPPvCardAvatarModule alloc ]initWithvCardTempModule:_vCard];
@@ -225,6 +233,25 @@ singleton_implementation(PeXmppTool);
     
 }
 
+#pragma mark 释放XMPPsteam 相关的资源
 
+-(void) teardownXmpp
+{
+    //移除代理
+    [_xmppStream removeDelegate:self];
+    
+    //停止模块
+    [_reConnect deactivate];
+    [_vCard deactivate];
+    [_avart deactivate];
+    
+    //断开连接
+    [_xmppStream disconnect];
+    //清空资源
+    _reConnect = nil;
+    _vCard=nil;
+    _avart = nil;
+    _xmppStream = nil;
+}
 
 @end
